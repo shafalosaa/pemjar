@@ -51,3 +51,9 @@ def forgot_password():
         return redirect(url_for('auth.forgot_password'))
 
     return render_template('auth/forgot_password.html')
+
+@auth_bp.route('/profile')
+@login_required
+def profile():
+    """User profile page."""
+    return render_template('netsible_profile_page.html')

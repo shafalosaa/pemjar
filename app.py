@@ -26,12 +26,14 @@ def create_app(config_name=None):
     from blueprints.devices import devices_bp
     from blueprints.monitoring import monitoring_bp
     from blueprints.network_map import network_map_bp
+    from blueprints.backup import backup_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(dashboard_bp)
     app.register_blueprint(devices_bp)
     app.register_blueprint(monitoring_bp)
     app.register_blueprint(network_map_bp)
+    app.register_blueprint(backup_bp)
 
     # Create database tables
     with app.app_context():
